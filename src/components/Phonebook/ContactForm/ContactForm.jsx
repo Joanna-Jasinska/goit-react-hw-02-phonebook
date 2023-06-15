@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import css from './../Phonebook.module.css';
+import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 export class ContactForm extends Component {
   constructor({ name, number, addContactHandle, inputOnChange }) {
     super({ name, number, addContactHandle, inputOnChange });
-    // this.props = { name, number, addContactHandle, inputOnChange };
   }
 
   render() {
@@ -56,3 +56,11 @@ export class ContactForm extends Component {
     );
   }
 }
+
+// { name, number, addContactHandle, inputOnChange }
+ContactForm.propTypes = {
+  name: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
+  addContactHandle: PropTypes.func.isRequired,
+  inputOnChange: PropTypes.func.isRequired,
+};

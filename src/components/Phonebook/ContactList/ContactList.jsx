@@ -66,3 +66,17 @@ export class ContactList extends Component {
     );
   }
 }
+
+// { contacts, filter, inputOnChange, deleteContactHandle }
+ContactList.propTypes = {
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  filter: PropTypes.string.isRequired,
+  inputOnChange: PropTypes.func.isRequired,
+  deleteContactHandle: PropTypes.func.isRequired,
+};

@@ -14,6 +14,12 @@ export class Phonebook extends Component {
       ...{ filter },
     };
   }
+  static defaultProps = {
+    contacts: [],
+    name: '',
+    number: '',
+    filter: '',
+  };
 
   Title = ({ title }) => <h2 className={css.title}>{title}</h2>;
 
@@ -81,12 +87,6 @@ export class Phonebook extends Component {
 
   render() {
     return (
-      // <div className={css.phonebook}>
-      //   <h1>Phonebook</h1>
-      //   <this.AddContactCard />
-      //   <h2>Contacts</h2>
-      //   <this.Contacts contacts={this.state.contacts} />
-      // </div>
       <div className={css.phonebook}>
         <this.Title title="Phonebook" />
         <ContactForm
@@ -96,7 +96,6 @@ export class Phonebook extends Component {
         />
 
         <this.Title title="Contacts" />
-        {/* <Filter ... /> */}
         <ContactList
           {...this.state}
           inputOnChange={this.inputOnChange}
@@ -107,3 +106,16 @@ export class Phonebook extends Component {
     );
   }
 }
+// { contacts, name, number, filter }
+ContactList.propTypes = {
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+    })
+  ),
+  name: PropTypes.string,
+  number: PropTypes.string,
+  filter: PropTypes.string,
+};
