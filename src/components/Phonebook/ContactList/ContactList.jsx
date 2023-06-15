@@ -3,16 +3,14 @@ import PropTypes from 'prop-types';
 // import { nanoid } from 'nanoid';
 import css from './../Phonebook.module.css';
 export class ContactList extends Component {
-  constructor({ contacts, filter, inputOnChange, deleteContactHandle }) {
-    super({ contacts, filter, inputOnChange, deleteContactHandle });
-    // this.props = { contacts, filter, inputOnChange };
-    console.log('ContactList this.props');
-    console.log(this.props);
+  constructor(props) {
+    super(props);
+    // this.props = { contacts, filter, inputOnChange, deleteContactHandle };
   }
   Entry = ({ name, number, id }) => {
     {
       return (
-        <li className={css.entry} key={id} id={id}>
+        <li className={css.entry} key={`${id}`} id={id}>
           {name + ': ' + number}
           <button
             className={`${css.button} ${css.delete}`}

@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import css from './../Phonebook.module.css';
 import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
+// { name, number, addContactHandle, inputOnChange }
 export class ContactForm extends Component {
-  constructor({ name, number, addContactHandle, inputOnChange }) {
-    super({ name, number, addContactHandle, inputOnChange });
+  constructor(props) {
+    super(props);
+    //  { name, number, addContactHandle, inputOnChange } = this.props;
   }
 
   render() {
