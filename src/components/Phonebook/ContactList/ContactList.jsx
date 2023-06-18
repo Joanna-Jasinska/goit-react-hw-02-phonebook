@@ -4,10 +4,6 @@ import PropTypes from 'prop-types';
 import css from './../Phonebook.module.css';
 
 export class ContactList extends Component {
-  constructor(props) {
-    super(props);
-    // this.props = { contacts, filter, inputOnChange, deleteContactHandle };
-  }
   Entry = ({ name, number, id }) => {
     {
       return (

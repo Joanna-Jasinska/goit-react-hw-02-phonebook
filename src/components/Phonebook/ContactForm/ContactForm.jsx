@@ -4,11 +4,6 @@ import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 // { name, number, addContactHandle, inputOnChange }
 export class ContactForm extends Component {
-  constructor(props) {
-    super(props);
-    //  { name, number, addContactHandle, inputOnChange } = this.props;
-  }
-
   render() {
     return (
       <div className={css.card}>
