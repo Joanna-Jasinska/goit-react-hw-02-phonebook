@@ -5,22 +5,18 @@ import css from './../Phonebook.module.css';
 
 export class ContactList extends Component {
   Entry = ({ name, number, id }) => {
-    {
-      return (
-        <li className={css.entry} key={`${id}`} id={id}>
-          {name + ': ' + number}
-          <button
-            className={`${css.button} ${css.delete}`}
-            type="button"
-            onClick={e =>
-              this.props.deleteContactHandle(e, { name, number, id })
-            }
-          >
-            Delete
-          </button>
-        </li>
-      );
-    }
+    return (
+      <li className={css.entry} key={`${id}`} id={id}>
+        {name + ': ' + number}
+        <button
+          className={`${css.button} ${css.delete}`}
+          type="button"
+          onClick={e => this.props.deleteContactHandle(e, { name, number, id })}
+        >
+          Delete
+        </button>
+      </li>
+    );
   };
   render() {
     return (
@@ -50,11 +46,7 @@ export class ContactList extends Component {
         </button>
         <ul className={css.list}>
           {this.props.filterContacts(this.props.filter).map(el => {
-            {
-              return (
-                <this.Entry name={el.name} number={el.number} id={el.id} />
-              );
-            }
+            return <this.Entry name={el.name} number={el.number} id={el.id} />;
           })}
         </ul>
       </div>

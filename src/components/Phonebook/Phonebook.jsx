@@ -41,7 +41,7 @@ export class Phonebook extends Component {
       this.state.contacts.find(
         c => c.name.toLowerCase() === newContact.name.toLowerCase()
       ) || 0;
-    if (filtered != 0) {
+    if (filtered !== 0) {
       this.setState({ filter: filtered.name });
       alert(`You aready have ${filtered.name} in your phonebook.
 
@@ -52,7 +52,7 @@ export class Phonebook extends Component {
       this.state.contacts.find(
         c => c.number.toLowerCase() === newContact.number.toLowerCase()
       ) || 0;
-    if (filteredNum != 0) {
+    if (filteredNum !== 0) {
       alert(`You aready have this number in your phonebook.
       
       ${filteredNum.name} ${filteredNum.number}`);
