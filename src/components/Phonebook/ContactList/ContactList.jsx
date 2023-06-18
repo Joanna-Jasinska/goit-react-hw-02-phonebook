@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 // import { nanoid } from 'nanoid';
 import css from './../Phonebook.module.css';
+
 export class ContactList extends Component {
   constructor(props) {
     super(props);
